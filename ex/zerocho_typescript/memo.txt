@@ -1,0 +1,26 @@
+##ts => js 변환시 사라지는 코드들
+    type
+    interface
+    any<T>
+    function body
+        function func(x:any): any
+        function func(x){ return any}
+    as 를 사용하여 타입을 변경
+        let a = '123';
+        a = 1004 as unknown as number;
+
+## as 강제로 타입 변경한다.
+
+## non-null : naver 
+    const arr = []; // naver[] 이 됨
+## non-null : !
+    const head = document.querySelector("#header")!;
+    head가 Element | null 인데 무조건 null이 아닌경우 !로 명시가능
+
+#typeof : 값을 type으로 쓰고 싶을때, 타입으로 쓰고 싶을때
+#keyof : 타입의 key값들을 쓰고 싶을때
+  const obj = { a: '123', b: '456'}
+  type Key = keyof typeof obj;
+
+# | (union) : 하나이상만 만족해야 한다.
+# & (intersection) : 모든 조건을 만족해야 한다
